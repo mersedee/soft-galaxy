@@ -169,6 +169,7 @@ body {
   letter-spacing: normal;
   color: #aaafb7;
   margin-bottom: 0;
+  min-height: 120px;
 }
 
 .trapezoid {
@@ -241,11 +242,6 @@ body {
 $cs: 30px;
 $br: 20px;
 
-:root {
-  --cs: 30px;
-  --br: 20px;
-}
-
 .polygon {
   clip-path: polygon(50% 0%, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0 50%, 0 0);
 }
@@ -257,6 +253,12 @@ $br: 20px;
   min-height: 160px;
   background-color: rgba(255, 255, 255, 0.23);
   margin-bottom: 32px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    cursor: pointer;
+    margin-left: 20px;
+  }
 
   &-content {
     position: absolute;
@@ -299,7 +301,7 @@ $br: 20px;
 }
 
 
-.card-active {
+.card-active, .card:hover {
   background-color: white;
   margin-left: 29px;
 
