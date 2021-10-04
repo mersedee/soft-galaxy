@@ -323,3 +323,20 @@ $br: 20px;
   }
 }
 
+.video-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -2;
+}
+
+.video {
+  width: 600px;
+  height: auto;
+}
+
+.audio {
+  visibility: hidden;
+}
+
