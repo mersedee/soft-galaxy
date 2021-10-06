@@ -3,7 +3,11 @@
 body {
   font-family: 'Saira Semi Condensed', sans-serif;
   color: white;
-  background: black;
+  background-color: black;
+  background-size: 200px 200px;
+  background-image:
+          linear-gradient(to right, rgba(255, 255, 255, 0.1) 0.8px, transparent 1px),
+          linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 0.8px, transparent 1px);
 }
 
 .padding {
@@ -17,28 +21,6 @@ body {
   top: 0;
   left: 0;
   margin-top: -70px;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  z-index: -1;
-
-  &-div {
-    //background: white;
-    border-right: solid 0.8px rgba(255, 255, 255, 0.1);
-    border-bottom: solid 0.8px rgba(255, 255, 255, 0.1);
-    display: grid;
-    place-items: center;
-
-    &::before {
-      // for apsect ratio
-      content: "";
-      display: block;
-      padding-bottom: 100%;
-      grid-area: 1 / 1 / 2 / 2;
-    }
-  }
 }
 
 // flexbox
@@ -338,5 +320,14 @@ $br: 20px;
 
 .audio {
   visibility: hidden;
+}
+
+
+@media (min-width: 1600px) {
+  .padding {
+    width: 1550px;
+    display: block;
+    margin: 0 auto;
+  }
 }
 
