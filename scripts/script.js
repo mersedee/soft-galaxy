@@ -52,5 +52,6 @@ for (var i = 0; i < cards.length; i++) {
         current[0].className = current[0].className.replace(" card-active", "");
         this.className += " card-active";
         setActiveData();
+        window.scrollTo(0, 0);
     });
 }
