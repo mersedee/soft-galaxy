@@ -58,3 +58,19 @@ for (var i = 0; i < cards.length; i++) {
         window.scrollTo(0, 0);
     });
 }
+
+// Audio play
+function autoplay() {
+    var r = confirm("Would You Like To AutoPlay Music?");
+    if (r == true) {
+        audioElement = document.getElementById("audio");
+        audioElement.play();
+
+        audioElement.addEventListener('ended', function() {
+            this.currentTime = 0;
+            this.play();
+        }, false);
+    }
+}
+
+autoplay();
