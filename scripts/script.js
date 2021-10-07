@@ -60,20 +60,10 @@ for (var i = 0; i < cards.length; i++) {
 }
 
 // Audio play
-function autoplay() {
-    var r = confirm("Would You Like To AutoPlay Music?");
-    if (r == true) {
-        audioElement = document.getElementById("audio");
-        audioElement.muted = true;
-        audioElement.play();
-        audioElement.muted = false;
-        audioElement.play();
+var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
 
-        audioElement.addEventListener('ended', function() {
-            this.currentTime = 0;
-            this.play();
-        }, false);
-    }
+if (!isChrome) {
+    document.getElementById('iframe').remove();
+} else {
+    document.getElementById('audio').remove()
 }
-
-autoplay();
