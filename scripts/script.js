@@ -3,18 +3,21 @@ const data = [
         number: '01',
         titlle: 'Wormhole',
         videoSrc: 'assets/videos/whormhole.mp4',
+        videoPoster: 'assets/images/whormhole-shot.png',
         desc: 'Wormholes were first theorized in 1916, though that wasn\'t what they were called at the time. While reviewing another physicist\'s solution to the equations in Albert Einstein\'s theory of general relativity, Austrian physicist Ludwig Flamm realized another solution was possible.'
     },
     {
         number: '02',
         titlle: 'Eye of God',
         videoSrc: 'assets/videos/helix.mp4',
+        videoPoster: 'assets/images/helix-shot.png',
         desc: 'The Helix Nebula, also known as NGC 7293, is a planetary nebula (PN) located in the constellation Aquarius. Discovered by Karl Ludwig Harding probably before 1824, this object is one of the closest to the Earth of all the bright planetary nebulae'
     },
     {
         number: '03',
         titlle: 'Blackhole',
         videoSrc: 'assets/videos/blackhole.mp4',
+        videoPoster: 'assets/images/blackhole-shot.png',
         desc: 'A black hole is a region of spacetime where gravity is so strong that nothing—no particles or even electromagnetic radiation such as light—can escape from it. The theory of general relativity predicts that a sufficiently compact mass can deform spacetime to form a black hole.'
     },
 ]
@@ -34,7 +37,7 @@ function setActiveData() {
 
     var videoTemplate = document.getElementById("video");
     var videoNode = `
-    <video class="video" src="${data[index].videoSrc}" loop muted autoplay></video>
+    <video class="video" src="${data[index].videoSrc}" poster="${data[index].videoPoster}" loop muted autoplay></video>
     `
 
     videoTemplate.innerHTML = videoNode;
