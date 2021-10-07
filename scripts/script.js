@@ -60,10 +60,22 @@ for (var i = 0; i < cards.length; i++) {
 }
 
 // Audio play
-var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+var track = document.getElementById('audio');
+var controlBtn = document.getElementById('play-pause');
+var loading = document.getElementById('loading');
 
-if (!isChrome) {
-    document.getElementById('iframe').remove();
-} else {
-    document.getElementById('audio').remove()
+function playPause() {
+    loading.style.opacity = "0";
+    if (track.paused) {
+        track.play();
+        controlBtn.className = "pause";
+    } else {
+        track.pause();
+        controlBtn.className = "play";
+    }
 }
+
+controlBtn.addEventListener("click", playPause);
+track.addEventListener("ended", function () {
+    controlBtn.className = "play";
+});

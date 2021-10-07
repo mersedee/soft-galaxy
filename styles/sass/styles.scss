@@ -74,8 +74,50 @@ body {
   max-width: calc(100% / 2);
 }
 
-// header
+//loading
+.loading {
+  background-color: black;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  z-index: 1000;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.8s;
 
+  &-msg {
+    margin-top: 12px;
+    font-size: 25px;
+  }
+}
+
+#player-container #play-pause {
+  cursor: pointer;
+  text-indent: -999999px;
+  height: 80px;
+  width: 80px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../assets/images/play.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+
+.play, .pause {
+  background-image: url("../assets/images/play.png");
+}
+
+// header
 .navbar {
   display: flex;
   align-items: center;
@@ -321,10 +363,6 @@ $br: 20px;
   width: 600px;
   height: auto;
   border-radius: 50%;
-}
-
-.audio {
-  visibility: hidden;
 }
 
 @media (min-width: 1600px) {
