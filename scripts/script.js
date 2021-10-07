@@ -64,7 +64,11 @@ function autoplay() {
     var r = confirm("Would You Like To AutoPlay Music?");
     if (r == true) {
         audioElement = document.getElementById("audio");
-        audioElement.play();
+
+        setTimeout(() => {
+            audioElement.pause()
+            audioElement.play()
+        }, 10)
 
         audioElement.addEventListener('ended', function() {
             this.currentTime = 0;
