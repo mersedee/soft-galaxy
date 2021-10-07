@@ -66,6 +66,7 @@ var loading = document.getElementById('loading');
 
 function playPause() {
     loading.style.opacity = "0";
+    loading.style.zIndex = "-1";
     if (track.paused) {
         track.play();
         controlBtn.className = "pause";
